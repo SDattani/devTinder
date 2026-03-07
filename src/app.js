@@ -3,16 +3,16 @@ const express = require('express');
 const app = express();
 
 
-app.use('/test', (req,res) => {
+app.get('/test', (req,res) => {
     res.send('The Server is being tested!');
 });
 
-app.use('/hello', (req,res) => {
-    res.send('Hello World!');
+app.post('/test', (req,res) => {
+    res.send('The server is tested successfully!');
 });
 
-app.use('/', (req,res) => {
-    res.send('The Server is running!');
+app.delete('/test', (req,res) => {
+    res.send('The test route is deleted!');
 });
 
 app.listen(3000, () => {
